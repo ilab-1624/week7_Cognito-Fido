@@ -1,0 +1,8 @@
+access_key = ''
+secret_access_key = ''
+region_name = 'us-west-2'
+ARN_Object = ''
+ARN_FACE = ''
+ARN_PPE = ''
+ARN_Signin = ''
+ARN_Fraud = ''
