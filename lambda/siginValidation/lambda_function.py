@@ -8,6 +8,5 @@ def lambda_handler(event, context):
     signinValidate.query_config()
     signinValidate.storeImage()
     signinValidate.signinValidate()
-    #signinValidate.facevalidate_redshift()
     
     return signinValidate.getModel()
