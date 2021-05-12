@@ -162,19 +162,7 @@ class AlertNotify():
         self.__receiverLineIdList = []
         self.__personImageMessages = personImageMessages
         self.__validationResultMessage = validationResultMessage
-        
-        
-    #list roles all user    
-    def getGroupUserList(self):
-        listUsersResponse = self.__IAM_client.get_group(
-            GroupName = config.ROLE
-        )
-
-        for user in listUsersResponse['Users']:
-            self.__userDataList.append(user['UserName'])
             
-        #print(self.__userDataList)
-        
     #using uID exchanged into LineID        
     def getUserLineID(self):
             #listIDlist= []
