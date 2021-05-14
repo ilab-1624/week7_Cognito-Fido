@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WebAuthn with Cognito</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://cdn.jsdelivr.net/gh/herrjemand/Base64URL-ArrayBuffer@latest/lib/base64url-arraybuffer.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/amazon-cognito-identity.js"></script>
+    <script src="/webauthn-client.js"></script>
+    
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+  </head>
+  <body class="w3-container">
+
+      <h2>
+        WebAuthn with Cognito
+      </h2>
+      
+      <div id="tabs">
+        <ul>
+          <li><a href="#tabs-1">Register</a></li>
+          <li><a href="#tabs-2">Sign-in</a></li>
+        </ul>
+        <div id="tabs-1">
+          <input class="w3-input"  type="text" id="reg-username" placeholder="username"/><br>
+          <input class="w3-input"  type="password" id="reg-password" placeholder="password"/><br>
+          <input class="w3-input" type="text" id="reg-email" placeholder="email"/><br>
+          <input class="w3-input" type="text" id="reg-name" placeholder="name"/><br>
+          <button class="w3-btn w3-black" onclick="createCredential()">Register with Authenticator</button> 
+        </div>
+        <div id="tabs-2">
+          <input class="w3-input" type="text" id="login-username" placeholder="username"/><br>
+          <input class="w3-input" type="password" id="login-password" placeholder="password"/><br>
+          <p>Sign-in experience:</p>
+          <input class="w3-radio" type="radio" name="authentication" value="both" checked><label> Login with Password + FIDO</label><br>
+          <input class="w3-radio" type="radio" name="authentication" value="password"><label> Login with Password Only</label><br>
+          <input  class="w3-radio" type="radio" name="authentication" value="fido"><label> Password-less (FIDO only)</label><br><br>
+          <button class="w3-btn w3-black" onclick="signIn()">Login</button> 
+        </div>
+      </div>
+      <br><br>
+      <pre class="" id="idToken"></pre>
+      <pre class="" id="accessToken"></pre>
+      <pre class="" id="refreshToken"></pre>
+  </body>
+</html>
