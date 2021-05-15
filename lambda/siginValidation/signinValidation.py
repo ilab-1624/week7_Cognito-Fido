@@ -300,7 +300,6 @@ class SigninValidate:
         self.__dataModel["frame"]["openCV"]["imageBase64"] = ""
         #try:
         print(self.__dataModel)
-        self.facevalidate_redshift()
         """except Exception as e:
             print("line311")
             print(e)"""
